@@ -30,9 +30,15 @@ Decoupling view from the business logic and data providers.
 
 Twitter Bootstrap is also used in this tutorial but I will not be going into detail. In brief Bootstrap is a framework for responsive design which contains HTML and CSS-based design templates for typography, forms, buttons, navigation and other interface components, as well as optional JavaScript extensions. In this tutorial we will only be using it to "pretty up" our application and give it a polished professional look
 
-Data Binding without a controller
+Data Binding
+The simplest and most basic example of the power and usefullness of AngularJS is in its data binding. Most Web frameworks till recently only used single way data binding, for example if we wanted to update our model we would make our change and then in order to see the change we would have to refresh the view manually. Not in angularJS. In AngularJS we have 2-way Data binding, when we update the view, it updates the model which auto update the views other references. Ass Google put it: "You can think of the view as simply an instant projection of your model".
+
+There are a number of ways to do this, the simplist is using 2 of angulars built in fundamental capabilities, a "directive" called ngModel and an Angular Expression. A directive is a markers on a DOM element such as a css class, element name or attribute used to attach some behaviour
     users name on page using `{{ }}` - users name
     ng-model -
+
+    JS Fiddle Data Binding: http://jsfiddle.net/jonniedarko/yRM8A/
+
 
 Create index.html
 create directory "Vendor"

@@ -1,31 +1,54 @@
 ng-macro
 ========
 
-An Angularjs Macro Calculator to calculate calories, protein, Carbs and fats for increasing muscle, loosing fat or maintaining current weight
+An AngularJS Macro Calculator to calculate calories, protein, Carbs and fats for increasing muscle, loosing fat or maintaining current weight
 
 
 ***Steps and tutorial outline/notes
 
 introduction:
- - What is Angularjs ( & briefly what is bootstrap)
+ - What is AngularJS ( & briefly what is bootstrap)
+ AngularJS is an open-source structural MVC framework for dynamic web applications which aims to make building large scale web applications easier for development, testing and maintaining. It was created by Google is maintained by both Google and the AngularJS community.
+
+Some of Its main goals include:
+
+Decoupling DOM manipulation from application logic.
+Improve code testability.
+Decoupling the client side of an application from the server side to allow development work to progress in parallel.
+Decoupling view from the business logic and data providers.
+
  - Advantages and why/where would you use it
- Include live snippets  
+ It does alot of the Heavy lifting for you, you create your component and AngularJS manages those components and the connections between them
+ Data models in Angular are plain old JavaScript objects (POJO) and don’t require extraneous getter and setter functions.
+ We can create custom reusable HTML elements
+ we Can create powerful custom filters which we can use to filter/sort or manipulate data using our own custom rules e.g. you could create a filter that removed all vowels from your text (see future post)
+ save writting alot of repative or code.
+ Data binding allows instant real time updating without refreshing page
+ It is built with Unit Testing in mind and allows for far greater code coverage with less effort
+
+ One disadvantage in my opinion is the documentation/developers guide for basics is great but when it some to complex examples such as complex directives I found fall shorts, expically when it comes to the Unit testing.
+
+Twitter Bootstrap is also used in this tutorial but I will not be going into detail. In brief Bootstrap is a framework for responsive design which contains HTML and CSS-based design templates for typography, forms, buttons, navigation and other interface components, as well as optional JavaScript extensions. In this tutorial we will only be using it to "pretty up" our application and give it a polished professional look
+
+Data Binding without a controller
+    users name on page using `{{ }}` - users name
+    ng-model -
 
 Create index.html
 create directory "Vendor"
 Download and add to Vendor: (Mention bower and add link to bower tutorial later)
   - Jquery
-  - Bootstrap 
-  - angularjs
+  - Bootstrap
+  - AngularJS
 
 Create Basic html form using bootstrap styling
 [commit](https://github.com/jonniedarko/ng-macro/commit/00f0b45cc81125d46ab85022da70357d5a2a62cd)
 
 Data Binding without a controller
 	users name on page using `{{ }}` - users name
-	ng-model - 
+	ng-model -
 
-Introduce controller 
+Introduce controller
 	- what is Controller and why use it (MVC)
 	- $scope, ng-model and {{}}
 	- functions and variables basics
@@ -33,9 +56,13 @@ Introduce controller
 Intoducing Unit testing
  	- TDD : Why?
  	- jasmine basics
-	
+
 Lets Make a functional App
 
 (next tutorial filter : converting kgs to pounds, ft to cm, filter data based on country, time, blah)
 (Services & factories)
 
+sources
+ - https://www.AngularJS.org
+ - http://www.sitepoint.com/10-reasons-use-angularjs/
+ - http://getbootstrap.com

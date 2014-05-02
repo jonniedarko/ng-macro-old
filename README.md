@@ -33,12 +33,14 @@ Twitter Bootstrap is also used in this tutorial but I will not be going into det
 Data Binding
 The simplest and most basic example of the power and usefullness of AngularJS is in its data binding. Most Web frameworks till recently only used single way data binding, for example if we wanted to update our model we would make our change and then in order to see the change we would have to refresh the view manually. Not in angularJS. In AngularJS we have 2-way Data binding, when we update the view, it updates the model which auto update the views other references. Ass Google put it: "You can think of the view as simply an instant projection of your model".
 
-There are a number of ways to do this, the simplist is using 2 of angulars built in fundamental capabilities, a "directive" called ngModel and an Angular Expression. A directive is a markers on a DOM element such as a css class, element name or attribute used to attach some behaviour
-    users name on page using `{{ }}` - users name
-    ng-model -
+There are a number of ways to do this, the simplist is using 2 of angulars built in fundamental capabilities, a "directive" called ngModel and an Angular Expression.
+A directive is a markers on a DOM element such as a css class, element name or attribute used to attach some behaviour. We won't go into much detail here on Directives, thats a post in its own for later.
+An Angular Expression are JavaScript-like code snippets surrounded by double curly braces like {{ expression }}. Expressions can evaluate angualar variables ,such as those created by an ngModel declaration, evaluating math expression as well as calling a function ( this requires a controller and $scope which we will introduce later)
 
-    JS Fiddle Data Binding: http://jsfiddle.net/jonniedarko/yRM8A/
+Fiddle Example
+    JS Fiddle Data Binding: http://jsfiddle.net/jonniedarko/hmyZB/8/
 
+So in order to go further with this we need to do a little bit of set up....
 
 Create index.html
 create directory "Vendor"

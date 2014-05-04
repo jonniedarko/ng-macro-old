@@ -218,6 +218,82 @@ Now none of this will do anything if we forget to include the controller on out 
 	
 </div>
 ```
+Code changes so far: [Github commit](https://github.com/jonniedarko/ng-macro/commit/5377796162cda17b1893c671214cb906bc70530c)
+
+finally we are going to finish of our app by calculating the Calories and displaying them. Add the following to the Index page:
+
+```html
+  <div class="row">
+        <div class="col-sm-12">
+            <select name="" id="" class="form-control" ng-model="user.activityLevel" ng-change="{{updateNutrition()}}">
+                <option value="">Select you Activity Level</option>
+                <option ng-repeat="activityLevel in activityLevels" value="{{activityLevel.value}}">{{activityLevel.title}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-bordered">
+                <thead>
+                    <th></th>
+                      <td ng-repeat="goal in goals">{{goal.title}}</td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Calories:</td>
+                        <td ng-repeat="goal in goals">{{goal.calories | number:0}}</td>
+                    </tr>
+                    <tr>
+                        <td>Protien:</td>
+                        <td ng-repeat="goal in goals">{{goal.protein | number:0}}</td>
+                    </tr>
+                    <tr>
+                        <td>Fats:</td>
+                        <td ng-repeat="goal in goals">{{goal.fats | number:0}}</td>
+                    </tr>
+                    <tr>
+                        <td>Carbs:</td>
+                        <td ng-repeat="goal in goals">{{goal.carbs | number:0}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+```
+
+Now thats our view template finished. But it will not look right yet as here we are introducing 2 more AngularJS directives , [ngRepeat]() and [ngChange]() which require functionality and variables setup in the controller.
+
+ngChange is an AngularJS implementation of the regular onChange which allows you to use an AngularJS Expression. ere we are using it to fire the `updateNutrition()` function when the Activity level is selected.
+
+ngRepeat is basically a "for" loop that repeats the element for each variable in an array.in order for this to display correctly add the following to the controller:
+
+```js
+$scope.goals = {
+    current: {
+        title:"Mainteance"
+        ,calories: 0
+        ,protein: 0
+        ,fats: 0
+        ,carbs:0
+    }
+    ,loss: {
+        title:"Fat Loss"
+        ,calories: 0
+        ,protein: 0
+        ,fats: 0
+        ,carbs:0
+    }
+    ,gain:{
+        title:"Muscle Gain"
+        ,calories: 0
+        ,protein: 0
+        ,fats: 0
+        ,carbs:0
+    }
+}
+```
+This simply creates and initialises the goals object and now our view will look more finalised (but not updating yet)
+
 
 
 Intoducing Unit testing

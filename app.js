@@ -3,6 +3,29 @@ var app = angular.module("ngMacro", []);
 app.controller('macroCtrl', function ($scope){
 
 	$scope.user = {};
+	$scope.goals = {
+	    current: {
+	        title:"Mainteance"
+	        ,calories: 0
+	        ,protein: 0
+	        ,fats: 0
+	        ,carbs:0
+	    }
+	    ,loss: {
+	        title:"Fat Loss"
+	        ,calories: 0
+	        ,protein: 0
+	        ,fats: 0
+	        ,carbs:0
+	    }
+	    ,gain:{
+	        title:"Muscle Gain"
+	        ,calories: 0
+	        ,protein: 0
+	        ,fats: 0
+	        ,carbs:0
+	    }
+	};
 
 	$scope.getMetaRate = function(){
 

@@ -1,54 +1,60 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>ng-macro | Jonnie.io</title>
-	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-</head>
-<body ng-app="ngMacro">
-
-	<div>
-		<div class="container">
-    <div class="row">
-        <div class="col-sm-12"><h1>Ng-Macro</h1></div>
-    </div>
-    <div class="row">
-        <div class="col-sm-8 form-group"><input type="text" class="form-control" id="user_name" ng-model="user.name" placeholder="What's your name?"></div>
-        <div class="col-sm-4 form-group"><input type="text" class="form-control" id="user_id" placeholder="What's your age?"></div>
-    </div>
-    <div class="row">
-        <div class="col-sm-4 form-group">
-            <div class="input-group">
-                <input type="text" class="form-control" id="user_height" ng-model="user.height" placeholder="What's your height?">
-                <span class="input-group-addon">cm</span>
+   <head>
+      <meta charset="UTF-8">
+      <title>ng-macro | Jonnie.io</title>
+      <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+   </head>
+   <body ng-app="ngMacro" >
+      <div ng-controller="macroCtrl">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1>Ng-Macro</h1>
+               </div>
             </div>
-        </div>
-        <div class="col-sm-4 form-group">
-            <div class="input-group">
-                <input type="text" class="form-control"  id="user_weight" ng-model="user.weight" placeholder="What's your weight?">
-                <span class="input-group-addon">kg</span>
+            <div class="row">
+               <div class="col-sm-8 form-group"><input type="text" class="form-control" id="user_name" ng-model="user.name" placeholder="What's your name?"></div>
+               <div class="col-sm-4 form-group"><input type="text" class="form-control" id="user_id" placeholder="What's your age?"></div>
             </div>
-        </div>
-        <div class="col-sm-4 form-group">
-            <div class="">
-                <select name="" id="user_sex" ng-model="user.sex" class="form-control form-control margin-zero">
-                    <option value="">what is your sex?</option>
-                    <option value="male">Male</option>
-                    <option value="female">female</option>
-                </select>
+            <div class="row">
+               <div class="col-sm-4 form-group">
+                  <div class="input-group">
+                     <input type="text" class="form-control" id="user_height" ng-model="user.height" placeholder="What's your height?">
+                     <span class="input-group-addon">cm</span>
+                  </div>
+               </div>
+               <div class="col-sm-4 form-group">
+                  <div class="input-group">
+                     <input type="text" class="form-control"  id="user_weight" ng-model="user.weight" placeholder="What's your weight?">
+                     <span class="input-group-addon">kg</span>
+                  </div>
+               </div>
+               <div class="col-sm-4 form-group">
+                  <div class="">
+                     <select name="" id="user_sex" ng-model="user.sex" ng-change="getMetaRate()" class="form-control form-control margin-zero">
+                        <option value="">what is your sex?</option>
+                        <option value="male">Male</option>
+                        <option value="female">female</option>
+                     </select>
+                  </div>
+               </div>
             </div>
-        </div>
-    </div>
-
-
-
-	</div>
-	
-	<!-- Dependencies-->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="vendor/angular/angular.min.js"></script>
-    <!-- App -->
-    <script src="app.js"></script>
-</body>
+            <div class="row">
+               <div class="col-sm-12">
+                  <p class="bg-primary kcal-flash">
+                   <b>&nbsp;{{user.name}}&nbsp;Basic Metabolic Rate: &nbsp; </b>&nbsp; {{ getMetaRate()}}
+                  </p>
+                
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Dependencies-->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+      <script src="vendor/angular/angular.min.js"></script>
+      <!-- App -->
+      <script src="app.js"></script>
+   </body>
 </html>

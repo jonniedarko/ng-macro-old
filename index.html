@@ -5,7 +5,7 @@
 	<title>ng-macro | Jonnie.io</title>
 	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
 </head>
-<body>
+<body ng-app="ngMacro">
 
 	<div>
 		<div class="container">
@@ -13,25 +13,25 @@
         <div class="col-sm-12"><h1>Ng-Macro</h1></div>
     </div>
     <div class="row">
-        <div class="col-sm-8 form-group"><input type="text" class="form-control" id="user_name" placeholder="What's your name?"></div>
+        <div class="col-sm-8 form-group"><input type="text" class="form-control" id="user_name" ng-model="user.name" placeholder="What's your name?"></div>
         <div class="col-sm-4 form-group"><input type="text" class="form-control" id="user_id" placeholder="What's your age?"></div>
     </div>
     <div class="row">
         <div class="col-sm-4 form-group">
             <div class="input-group">
-                <input type="text" class="form-control" id="user_height" placeholder="What's your height?">
+                <input type="text" class="form-control" id="user_height" ng-model="user.height" placeholder="What's your height?">
                 <span class="input-group-addon">cm</span>
             </div>
         </div>
         <div class="col-sm-4 form-group">
             <div class="input-group">
-                <input type="text" class="form-control"  id="user_weight" placeholder="What's your weight?">
+                <input type="text" class="form-control"  id="user_weight" ng-model="user.weight" placeholder="What's your weight?">
                 <span class="input-group-addon">kg</span>
             </div>
         </div>
         <div class="col-sm-4 form-group">
             <div class="">
-                <select name="" id="user_sex" class="form-control form-control margin-zero">
+                <select name="" id="user_sex" ng-model="user.sex" class="form-control form-control margin-zero">
                     <option value="">what is your sex?</option>
                     <option value="male">Male</option>
                     <option value="female">female</option>
@@ -41,11 +41,14 @@
     </div>
 
 
+
 	</div>
 	
 	<!-- Dependencies-->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="vendor/angular/angular.min.js"></script>
+    <!-- App -->
+    <script src="app.js"></script>
 </body>
 </html>
